@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Parcel.Models 
+namespace ShippingCo.Models 
 {
   public class Parcel
   {
@@ -40,6 +40,10 @@ namespace Parcel.Models
     public void SetWeight(int weight)
     {
         _weight = weight;
+    }
+    public static List<Parcel> GetAll()
+    {
+       return _instances;
     }
   }
 }

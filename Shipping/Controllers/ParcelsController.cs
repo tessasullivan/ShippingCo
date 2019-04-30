@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Parcel.Models;
+using ShippingCo.Models;
 
 namespace ShippingCo.Controllers
 {
@@ -9,24 +9,19 @@ namespace ShippingCo.Controllers
     [HttpGet("/parcels")]
     public ActionResult Index()
     {
-        List<Car> allCars = Car.GetAll();
-        return View(allCars);
+        List<Parcel> allParcels = Parcel.GetAll();
+        return View(allParcels);
     }
-    [HttpGet("/cars/new")]
+    [HttpGet("/parcels/new")]
     public ActionResult CreateForm()
     {
         return View();
     }
-    [HttpPost("/cars")]
-    public ActionResult Create(string makeModel, int price, int miles)
+    [HttpPost("/parcels")]
+    public ActionResult Create(int length, int width, int weight)
     {
-        Car myCar = new Car(makeModel, price, miles);
+        Parcel myParcel = new Parcel(length, width, weight);
         return RedirectToAction("Index");
     }
-    // public ActionResult Create(string description)
-    // {
-    //     Item myItem = new Item(description);
-    //     return RedirectToAction("Index");
-    // }
   }
 }

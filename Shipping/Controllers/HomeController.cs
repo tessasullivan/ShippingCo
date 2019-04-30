@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Parcel.Models;
+using ShippingCo.Models;
 
 namespace ShippingCo.Controllers
 {
@@ -8,13 +8,13 @@ namespace ShippingCo.Controllers
   {
 
     [HttpGet("/")]
-    // public string Hello() { return "Hello friend!"; }
+    public string Hello() { return "Hello friend!"; }
 
-    public ActionResult Index()
-    {
+    // public ActionResult Index()
+    // {
 
-        return View();
-        // return new EmptyResult();
-    }
+    //     return View();
+    //     // return new EmptyResult();
+    // }
   }
 }
