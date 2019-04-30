@@ -7,12 +7,14 @@ namespace ShippingCo.Models
   {
     private static List<Parcel> _instances = new List<Parcel>{};
     private int _length;
+    private int _height;
     private int _width;
     private int _weight;
 
-    public Parcel(int length, int width, int weight)
+    public Parcel(int length, int height, int width, int weight)
     {
         _length = length;
+        _height = height;
         _width = width;
         _weight = weight;
         _instances.Add(this);
@@ -20,6 +22,10 @@ namespace ShippingCo.Models
     public int GetLength()
     {
         return _length;
+    }
+    public int GetHeight()
+    {
+        return _height;
     }
     public int GetWidth()
     {
@@ -33,6 +39,10 @@ namespace ShippingCo.Models
     {
         _length = length;
     }
+    public void SetHeight(int height)
+    {
+        _height = height;
+    }
     public void SetWidth(int width)
     {
         _width = width;
@@ -40,6 +50,14 @@ namespace ShippingCo.Models
     public void SetWeight(int weight)
     {
         _weight = weight;
+    }
+    public int CalculateVolume()
+    {
+        return _length * _width * _height;
+    }
+    public double CalculateShippingCost()
+    {
+        return _weight * 1.5;
     }
     public static List<Parcel> GetAll()
     {

@@ -8,13 +8,10 @@ namespace ShippingCo.Controllers
   {
 
     [HttpGet("/")]
-    public string Hello() { return "Hello friend!"; }
-
-    // public ActionResult Index()
-    // {
-
-    //     return View();
-    //     // return new EmptyResult();
-    // }
+    public ActionResult Index()
+    {
+        return View();
+        // return new EmptyResult();
+    }
   }
 }

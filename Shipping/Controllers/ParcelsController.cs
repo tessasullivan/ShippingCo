@@ -13,14 +13,14 @@ namespace ShippingCo.Controllers
         return View(allParcels);
     }
     [HttpGet("/parcels/new")]
-    public ActionResult CreateForm()
+    public ActionResult Form()
     {
         return View();
     }
     [HttpPost("/parcels")]
-    public ActionResult Create(int length, int width, int weight)
+    public ActionResult Create(int length, int height, int width, int weight)
     {
-        Parcel myParcel = new Parcel(length, width, weight);
+        Parcel myParcel = new Parcel(length, height, width, weight);
         return RedirectToAction("Index");
     }
   }
